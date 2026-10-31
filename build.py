@@ -295,6 +295,7 @@ ICONS = [
 WA_ICON = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2l-.5-.3z"/></svg>'
 FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f5d46'/%3E%3Cpath d='M12 46 26 24l8 12 6-8 12 18z' fill='%23f7f4ee'/%3E%3C/svg%3E"
 LANGS = [("de", "DE"), ("en", "EN"), ("ru", "RU")]
+OG_LOCALE = {"de": "de_DE", "en": "en_GB", "ru": "ru_RU"}
 SCORES = ["9,7", "9,6", "9,5", "9,3", "9,2", "9,2"]
 
 
@@ -332,6 +333,19 @@ def page(t):
     erw = "".join(f"<option{' selected' if n == 2 else ''}>{n}</option>" for n in range(1, 5))
     kind = "".join(f"<option{' selected' if n == 0 else ''}>{n}</option>" for n in range(0, 4))
 
+    ld = json.dumps({
+        "@context": "https://schema.org", "@type": "VacationRental",
+        "name": t["brand"], "description": t["desc"], "url": SITE + t["path"],
+        "image": [SITE + "fotos/" + f for f in ("hallenbad.jpg", "wohnzimmer.jpg", "schlafzimmer.jpg", "bank-aussicht.jpg")],
+        "telephone": "+49 174 4283147", "email": "harz.fewo@web.de",
+        "address": {"@type": "PostalAddress", "streetAddress": "Kurhausstraße 18", "postalCode": "38667",
+                    "addressLocality": "Bad Harzburg", "addressCountry": "DE"},
+        "containsPlace": {"@type": "Accommodation", "occupancy": {"@type": "QuantitativeValue", "maxValue": 4},
+                          "numberOfBedrooms": 1},
+        "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": n, "value": True}
+                           for n in ("Indoor pool", "Sauna", "Free parking", "Free Wi-Fi", "Balcony")],
+        "checkinTime": "14:00", "checkoutTime": "10:00", "petsAllowed": False,
+    }, ensure_ascii=False)
     draft_bar = f'<div class="draft">{t["draft"]}</div>\n\n' if DRAFT else ""
     robots = '<meta name="robots" content="noindex, nofollow">\n' if DRAFT else ""
 
@@ -345,6 +359,13 @@ def page(t):
 {robots}<meta name="theme-color" content="#2f5d46">
 <link rel="canonical" href="{SITE}{t['path']}">
 {alternates}
+<meta property="og:type" content="website">
+<meta property="og:title" content="{a(t['title'])}">
+<meta property="og:description" content="{a(t['desc'])}">
+<meta property="og:url" content="{SITE}{t['path']}">
+<meta property="og:image" content="{SITE}fotos/hallenbad.jpg">
+<meta property="og:locale" content="{OG_LOCALE[t['lang']]}">
+<script type="application/ld+json">{ld}</script>
 <link rel="stylesheet" href="{up}style.css">
 <link rel="icon" href="{FAVICON}">
 </head>
