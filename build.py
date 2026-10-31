@@ -12,7 +12,7 @@ import json
 import os
 
 SITE = "https://harz-zu-jeder-jahreszeit.de/"
-DRAFT = True  # Entwurf: gelber Hinweis und noindex. Auf False setzen, wenn die Seite fertig ist.
+DRAFT = False  # Entwurf: gelber Hinweis und noindex. Auf False setzen, wenn die Seite fertig ist.
 
 # Fotos: Datei, Breite, Höhe, Bildunterschrift je Sprache (dient auch als Alt-Text in der Großansicht)
 GALLERY = [
@@ -99,7 +99,7 @@ T["de"] = dict(
           ("Kinder", "ab 3 Jahren willkommen"),
           ("Rauchen", "nur auf dem Balkon"),
           ("Haustiere, Grillen, Partys", "leider nicht möglich"),
-          ("Ruhezeiten", "mittags und 22:00 bis 07:00 Uhr")],
+          ("Ruhezeiten", "13:00 bis 15:00 und 22:00 bis 07:00 Uhr")],
     a_eyebrow="Anfrage", a_h2="Wir freuen uns auf Sie",
     a_text="Ihre Gastgeber, Familie Reese. Wir wohnen in Bramsche bei Osnabrück; Bad Harzburg ist unser Ausgleich zu Job und Alltag geworden. Wir sprechen Deutsch, Englisch und Russisch.",
     mobile_label="Mobil und WhatsApp", mobile_no="0174 4283147", phone_no="05468 8068890", phone_label="Telefon", mail_label="E-Mail",
@@ -178,7 +178,7 @@ T["en"] = dict(
           ("Children", "welcome from age 3"),
           ("Smoking", "on the balcony only"),
           ("Pets, barbecues, parties", "not allowed"),
-          ("Quiet hours", "at midday and from 10 pm to 7 am")],
+          ("Quiet hours", "1 pm to 3 pm and 10 pm to 7 am")],
     a_eyebrow="Enquiry", a_h2="We look forward to welcoming you",
     a_text="Your hosts, the Reese family. We live in Bramsche near Osnabrück; Bad Harzburg has become our place to unwind. We speak German, English and Russian.",
     mobile_label="Mobile and WhatsApp", mobile_no="+49 174 4283147", phone_no="+49 5468 8068890", phone_label="Landline", mail_label="Email",
@@ -257,7 +257,7 @@ T["ru"] = dict(
           ("Дети", "с 3 лет"),
           ("Курение", "только на балконе"),
           ("Животные, гриль, вечеринки", "к сожалению, нельзя"),
-          ("Время тишины", "в обед и с 22:00 до 07:00")],
+          ("Время тишины", "с 13:00 до 15:00 и с 22:00 до 07:00")],
     a_eyebrow="Запрос", a_h2="Будем рады вас видеть",
     a_text="Ваши хозяева, семья Reese. Мы живём в Брамше под Оснабрюком, а Бад-Харцбург стал для нас местом отдыха от работы и будней. Мы говорим по-немецки, по-английски и по-русски.",
     mobile_label="Мобильный и WhatsApp", mobile_no="+49 174 4283147", phone_no="+49 5468 8068890", phone_label="Телефон", mail_label="Эл. почта",

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://harz-zu-jeder-jahreszeit.de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://harz-zu-jeder-jahreszeit.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harz-zu-jeder-jahreszeit.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harz-zu-jeder-jahreszeit.de/ru/"/></url>
+  <url><loc>https://harz-zu-jeder-jahreszeit.de/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://harz-zu-jeder-jahreszeit.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harz-zu-jeder-jahreszeit.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harz-zu-jeder-jahreszeit.de/ru/"/></url>
+  <url><loc>https://harz-zu-jeder-jahreszeit.de/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://harz-zu-jeder-jahreszeit.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harz-zu-jeder-jahreszeit.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harz-zu-jeder-jahreszeit.de/ru/"/></url>
+  <url><loc>https://harz-zu-jeder-jahreszeit.de/impressum.html</loc></url>
+  <url><loc>https://harz-zu-jeder-jahreszeit.de/datenschutz.html</loc></url>
+</urlset>

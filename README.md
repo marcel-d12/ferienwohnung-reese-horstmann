@@ -18,4 +18,4 @@ Statische Seite ohne Build-Schritt, gehostet über GitHub Pages (Branch `main`, 
 - [x] Telefon, Mobil/WhatsApp und Mail (31.10.)
 - [x] Anschrift und E-Mail (31.10.)
 - [ ] Falls es eine USt-IdNr. gibt: ins Impressum
-- [ ] Entwurfs-Hinweis und `noindex` entfernen (`DRAFT = False` in `build.py`, Hinweis in Impressum und Datenschutz löschen)
+- [x] Entwurfs-Hinweis und `noindex` entfernt (31.10.)
