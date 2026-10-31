@@ -14,7 +14,7 @@ Statische Seite ohne Build-Schritt, gehostet über GitHub Pages (Branch `main`, 
 
 - [x] Fotos der Wohnung (31.10.)
 - [ ] Fotos von Hallenbad und Sauna
-- [ ] Telefon/WhatsApp und E-Mail (in `index.html` oben im Skript und im Text)
-- [ ] Anschrift im Impressum und in der Datenschutzerklärung
-- [ ] Umsatzsteuer-Abschnitt im Impressum klären
+- [ ] Telefon/WhatsApp: in `index.html` oben im Skript `WHATSAPP` und `TELEFON_ANZEIGE` setzen
+- [x] Anschrift und E-Mail (31.10.)
+- [ ] Falls es eine USt-IdNr. gibt: ins Impressum
 - [ ] Entwurfs-Hinweis und `noindex` entfernen

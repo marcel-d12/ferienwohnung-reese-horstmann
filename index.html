@@ -13,7 +13,7 @@
 </head>
 <body class="has-mbar">
 
-<div class="draft">Entwurf – Telefonnummer, Adresse im Impressum und Fotos von Hallenbad und Sauna folgen. Gelb markierte Stellen sind Platzhalter.</div>
+<div class="draft">Entwurf – Telefonnummer und Fotos von Hallenbad und Sauna folgen.</div>
 
 <header class="top">
   <div class="wrap">
@@ -170,7 +170,7 @@
       <h2>Direkt bei uns buchen</h2>
       <p>Schreiben Sie uns einfach, wann Sie kommen möchten. Wir melden uns persönlich mit Preis und Verfügbarkeit. Wer direkt bucht, zahlt keine Portalgebühr.</p>
       <ol class="steps">
-        <li><b>Anfrage</b> per WhatsApp, Telefon oder E-Mail</li>
+        <li><b>Anfrage</b> per E-Mail oder WhatsApp</li>
         <li><b>Bestätigung</b> mit Preis von uns</li>
         <li><b>Anzahlung</b> von 100 € innerhalb einer Woche</li>
         <li><b>Restzahlung</b> 28 Tage vor Anreise, per Überweisung oder PayPal</li>
@@ -200,8 +200,8 @@
       <h2>Wir freuen uns auf Sie</h2>
       <p>Ihre Gastgeber Swetlana und Carsten Reese. Wir wohnen in Bramsche bei Osnabrück; Bad Harzburg ist unser Ausgleich zu Job und Alltag geworden. Wir sprechen Deutsch, Englisch und Russisch.</p>
       <ul class="contact-lines">
-        <li>WhatsApp und Telefon: <span class="todo">Nummer folgt</span></li>
-        <li>E-Mail: <span class="todo">Adresse folgt</span></li>
+        <li id="tel-line" hidden>WhatsApp und Telefon: <a id="tel-link" href="#"></a></li>
+        <li>E-Mail: <a href="mailto:s.horstann@gmx.de">s.horstann@gmx.de</a></li>
       </ul>
       <p class="hint">Auch auf <a href="https://www.booking.com/hotel/de/ferienwohnung-reese-horstmann.de.html" rel="noopener">Booking.com</a> buchbar.</p>
     </div>
@@ -223,7 +223,7 @@
         </button>
         <button class="btn btn-ghost" type="button" data-send="mail">Per E-Mail</button>
       </div>
-      <p class="hint">Ihre Angaben werden nicht auf dieser Website gespeichert. Die Knöpfe öffnen WhatsApp oder Ihr E-Mail-Programm mit einer fertigen Nachricht.</p>
+      <p class="hint">Ihre Angaben werden nicht auf dieser Website gespeichert. Die Knöpfe öffnen Ihr E-Mail-Programm oder WhatsApp mit einer fertigen Nachricht.</p>
     </form>
   </div>
 </section>
@@ -242,10 +242,19 @@
   <a class="btn btn-primary" href="#anfrage">Anfragen</a>
 </div>
 
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Fotoansicht">
+  <div class="lb-scroll"><img alt=""></div>
+  <button class="x" type="button" aria-label="Schließen">×</button>
+  <button class="prev" type="button" aria-label="Vorheriges Foto">‹</button>
+  <button class="next" type="button" aria-label="Nächstes Foto">›</button>
+  <div class="cap"></div>
+</div>
+
 <script>
   // Kontaktdaten hier eintragen (Telefon international ohne + und ohne Leerzeichen, z. B. 4915112345678)
   var WHATSAPP = "";
-  var EMAIL = "";
+  var TELEFON_ANZEIGE = ""; // z. B. "0151 1234 5678"
+  var EMAIL = "s.horstann@gmx.de";
 
   function text() {
     var f = function (id) { return document.getElementById(id).value; };
@@ -268,9 +277,60 @@
       }
     });
   });
+  if (WHATSAPP) {
+    var tl = document.getElementById("tel-link");
+    tl.textContent = TELEFON_ANZEIGE || ("+" + WHATSAPP); tl.href = "tel:+" + WHATSAPP;
+    document.getElementById("tel-line").hidden = false;
+  } else {
+    // Ohne Nummer nur per E-Mail anfragen
+    document.querySelectorAll('[data-send="wa"], .mbar .btn-wa').forEach(function (e) { e.style.display = "none"; });
+    document.querySelector('[data-send="mail"]').className = "btn btn-primary";
+  }
   var von = document.getElementById("von"), bis = document.getElementById("bis");
   von.min = new Date().toISOString().slice(0, 10);
   von.addEventListener("change", function () { bis.min = von.value; if (bis.value && bis.value <= von.value) bis.value = ""; });
+
+  // Fotos groß ansehen: Klick öffnet, Klick aufs Bild zoomt, Pfeile/Wischen blättern, Esc schließt
+  (function () {
+    var imgs = [].slice.call(document.querySelectorAll(".ph img"));
+    var lb = document.getElementById("lb"), big = lb.querySelector("img"), cap = lb.querySelector(".cap"), box = lb.querySelector(".lb-scroll");
+    var i = 0, x0 = null;
+    function show(n) {
+      i = (n + imgs.length) % imgs.length;
+      lb.classList.remove("zoom");
+      big.src = imgs[i].src; big.alt = imgs[i].alt;
+      cap.textContent = imgs[i].alt + "  ·  " + (i + 1) + " / " + imgs.length;
+    }
+    function close() { lb.classList.remove("open"); document.body.style.overflow = ""; }
+    imgs.forEach(function (im, n) {
+      im.addEventListener("click", function () { show(n); lb.classList.add("open"); document.body.style.overflow = "hidden"; });
+    });
+    big.addEventListener("click", function (e) {
+      var r = big.getBoundingClientRect(), fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
+      lb.classList.toggle("zoom");
+      if (lb.classList.contains("zoom")) {
+        box.scrollLeft = fx * box.scrollWidth - box.clientWidth / 2;
+        box.scrollTop = fy * box.scrollHeight - box.clientHeight / 2;
+      }
+    });
+    box.addEventListener("click", function (e) { if (e.target === box) close(); });
+    lb.querySelector(".x").addEventListener("click", close);
+    lb.querySelector(".prev").addEventListener("click", function () { show(i - 1); });
+    lb.querySelector(".next").addEventListener("click", function () { show(i + 1); });
+    document.addEventListener("keydown", function (e) {
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") show(i - 1);
+      if (e.key === "ArrowRight") show(i + 1);
+    });
+    box.addEventListener("touchstart", function (e) { x0 = e.touches.length === 1 ? e.touches[0].clientX : null; }, { passive: true });
+    box.addEventListener("touchend", function (e) {
+      if (x0 === null || lb.classList.contains("zoom")) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1));
+      x0 = null;
+    });
+  })();
 </script>
 </body>
 </html>
