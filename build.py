@@ -24,17 +24,29 @@ GALLERY = [
     ("wohnzimmer-tv.jpg", 1050, 1400, "", {"de": "Wohnzimmer", "en": "Living room", "ru": "Гостиная"}),
     ("mini-backofen.jpg", 576, 768, "", {"de": "Kommode mit Mini-Backofen", "en": "Sideboard with mini oven", "ru": "Комод с мини-духовкой"}),
     ("bad.jpg", 576, 768, "", {"de": "Duschbad", "en": "Shower room", "ru": "Ванная с душем"}),
-    ("waschtisch.jpg", 576, 768, "", {"de": "Waschtisch", "en": "Washbasin", "ru": "Раковина"}),
-    ("balkon-sitzplatz.jpg", 1050, 1400, "", {"de": "Balkon mit Sitzplatz", "en": "Balcony with seating", "ru": "Балкон со столиком"}),
+    ("balkon-sitzplatz.jpg", 1400, 933, "", {"de": "Balkon mit Sitzplatz", "en": "Balcony with seating", "ru": "Балкон со столиком"}),
     ("balkon.jpg", 1050, 1400, "", {"de": "Balkon am Waldrand", "en": "Balcony by the forest", "ru": "Балкон у леса"}),
     ("hallenbad-abends.jpg", 576, 768, "", {"de": "Hallenbad am Abend", "en": "Indoor pool in the evening", "ru": "Бассейн вечером"}),
+    ("haus.jpg", 1400, 933, "", {"de": "Apartmenthaus Kurhausstraße 18", "en": "Apartment building, Kurhausstraße 18", "ru": "Дом на Kurhausstraße 18"}),
     ("grundriss.jpg", 502, 480, "plan", {"de": "Grundriss der Wohnung", "en": "Floor plan", "ru": "План квартиры"}),
 ]
 TRIPS = [
     ("seilbahn.jpg", 828, 621, {"de": "Burgberg-Seilbahn", "en": "Burgberg cable car", "ru": "Канатная дорога на Бургберг"}),
     ("baumwipfelpfad.jpg", 1024, 683, {"de": "Baumwipfelpfad", "en": "Treetop walk", "ru": "Тропа по верхушкам деревьев"}),
     ("radau-wasserfall.jpg", 584, 768, {"de": "Radau-Wasserfall", "en": "Radau waterfall", "ru": "Водопад Радау"}),
-    ("winter.jpg", 768, 768, {"de": "Harz im Winter", "en": "The Harz in winter", "ru": "Гарц зимой"}),
+    ("burgruine.jpg", 1050, 1400, {"de": "Alter Baum auf der Burgruine", "en": "Old tree on the castle ruins", "ru": "Старое дерево на руинах замка"}),
+    ("see.jpg", 1400, 1050, {"de": "Baden und Spazieren am See", "en": "Lakeside walks", "ru": "Прогулки у озера"}),
+    ("wald.jpg", 1050, 1400, {"de": "Wandern im Wald", "en": "Hiking in the forest", "ru": "Прогулки по лесу"}),
+    ("walderdbeeren.jpg", 1050, 1400, {"de": "Walderdbeeren am Wegesrand", "en": "Wild strawberries along the trail", "ru": "Земляника у тропы"}),
+    ("todtenrode.jpg", 1050, 1400, {"de": "Herz in Todtenrode", "en": "Heart sculpture in Todtenrode", "ru": "Сердце в Тодтенроде"}),
+]
+WINTER = [
+    ("winter.jpg", 768, 768, {"de": "Verschneiter Harz", "en": "The Harz in snow", "ru": "Заснеженный Гарц"}),
+    ("lichterbogen.jpg", 1050, 1400, {"de": "Bad Harzburger Wintertreff", "en": "Bad Harzburg winter market", "ru": "Зимняя ярмарка в Бад-Харцбурге"}),
+    ("eisbahn.jpg", 1050, 1400, {"de": "Eisbahn", "en": "Ice rink", "ru": "Каток"}),
+    ("feuerzangenbowle.jpg", 1400, 933, {"de": "Feuerzangenbowle an der Eisbahn", "en": "Hot punch by the ice rink", "ru": "Пунш у катка"}),
+    ("wintertreff.jpg", 1050, 1400, {"de": "Glühwein vom Wintertreff", "en": "Mulled wine at the winter market", "ru": "Глинтвейн на ярмарке"}),
+    ("weihnachtsmarkt-getraenke.jpg", 1050, 1400, {"de": "Heiße Getränke am Weihnachtsmarkt", "en": "Hot drinks at the Christmas market", "ru": "Горячие напитки на рождественской ярмарке"}),
 ]
 DIST = ["400 m", "550 m", "600 m", "900 m", "2 km", "2,1 km", "12 km", "16 km"]
 
@@ -76,6 +88,7 @@ T["de"] = dict(
     plan="Grundriss der Wohnung ansehen",
     l_eyebrow="Lage und Ausflüge", l_h2="Mitten im Grünen, trotzdem zentral",
     l_lead="Die Wohnung liegt in der Kurhausstraße in Bad Harzburg, direkt am Waldrand. Restaurants sind zu Fuß erreichbar, der Nationalpark Harz beginnt gleich hinter dem Haus.",
+    season=["Frühling bis Herbst", "Winter"],
     trips_h="Ausflüge",
     trips=["Burgberg mit Seilbahn", "Baumwipfelpfad und Baumschwebebahn", "Radau-Wasserfall und Rabenklippen",
            "Sole-Therme und Kurpark", "Goslar mit Kaiserpfalz und Altstadt", "Wandern und im Winter Skifahren"],
@@ -158,6 +171,7 @@ T["en"] = dict(
     plan="View the floor plan",
     l_eyebrow="Location and trips", l_h2="Surrounded by nature, yet central",
     l_lead="The apartment is on Kurhausstraße in Bad Harzburg, right at the edge of the forest. Restaurants are within walking distance and the Harz National Park starts just behind the house.",
+    season=["Spring to autumn", "Winter"],
     trips_h="Things to do",
     trips=["Burgberg hill with cable car", "Treetop walk and suspended forest railway", "Radau waterfall and Rabenklippen cliffs",
            "Brine spa and spa park", "Goslar with its imperial palace and old town", "Hiking, and skiing in winter"],
@@ -240,6 +254,7 @@ T["ru"] = dict(
     plan="Посмотреть план квартиры",
     l_eyebrow="Расположение и экскурсии", l_h2="На природе, но в центре",
     l_lead="Квартира находится на улице Kurhausstraße в Бад-Харцбурге, прямо у леса. До ресторанов можно дойти пешком, национальный парк Гарц начинается сразу за домом.",
+    season=["С весны до осени", "Зима"],
     trips_h="Куда сходить",
     trips=["Гора Бургберг с канатной дорогой", "Тропа по верхушкам деревьев и подвесная дорога", "Водопад Радау и скалы Рабенклиппен",
            "Соляные термы и курортный парк", "Гослар: императорский дворец и старый город", "Пешие прогулки, зимой лыжи"],
@@ -322,6 +337,9 @@ def page(t):
     trips_gal = "\n".join(
         f'      <figure class="ph"><img src="{up}fotos/{f}" alt="{a(cap[t["lang"]])}" loading="lazy" width="{w}" height="{h}"><figcaption>{cap[t["lang"]]}</figcaption></figure>'
         for f, w, h, cap in TRIPS)
+    winter_gal = "\n".join(
+        f'      <figure class="ph"><img src="{up}fotos/{f}" alt="{a(cap[t["lang"]])}" loading="lazy" width="{w}" height="{h}"><figcaption>{cap[t["lang"]]}</figcaption></figure>'
+        for f, w, h, cap in WINTER)
     hl = "\n".join(f"    <div>\n      {ICONS[i]}\n      <h3>{h}</h3><p>{p}</p>\n    </div>" for i, (h, p) in enumerate(t["hl"]))
     dist = "\n".join(
         f'          <li><span>{n}</span><span>{(t["approx"] + " ") if d == "12 km" else ""}{dec(d)}</span></li>'
@@ -444,8 +462,13 @@ def page(t):
     <div class="eyebrow">{t['l_eyebrow']}</div>
     <h2>{t['l_h2']}</h2>
     <p class="lead">{t['l_lead']}</p>
-    <div class="gallery" style="margin:24px 0">
+    <h3 class="season">{t['season'][0]}</h3>
+    <div class="gallery">
 {trips_gal}
+    </div>
+    <h3 class="season">{t['season'][1]}</h3>
+    <div class="gallery g3">
+{winter_gal}
     </div>
     <div class="cols">
       <div class="card">
