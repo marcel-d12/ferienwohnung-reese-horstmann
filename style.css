@@ -102,7 +102,8 @@ section{padding:56px 0}
 .steps li::before{content:counter(s);position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--wood);color:#fff;display:grid;place-items:center;font-weight:700}
 table.prices{width:100%;border-collapse:collapse;font-size:.95rem}
 table.prices td{padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
-table.prices td:last-child{text-align:right;white-space:nowrap;padding-left:12px}
+table.prices td:last-child{text-align:right;padding-left:12px}
+.cols>*,.hero-grid>*{min-width:0}
 
 /* Anfrage */
 form.ask{display:grid;gap:12px}
