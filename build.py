@@ -54,13 +54,13 @@ T = {}
 
 T["de"] = dict(
     lang="de", path="", up="",
-    title="Ferienwohnung Reese-Horstmann · Bad Harzburg mit Hallenbad und Sauna",
+    title="Ferienwohnung Reese-Horstmann · Bad Harzburg mit Hallenbad und Saunen",
     desc="Gemütliche Ferienwohnung für bis zu 4 Personen in Bad Harzburg: am Waldrand, mit Hallenbad und zwei Saunen im Haus, großem Balkon und kostenlosem Parkplatz. Direkt bei den Gastgebern anfragen.",
     draft="Entwurf – noch nicht freigegeben.",
     brand="Ferienwohnung Reese-Horstmann", brand_sub="Bad Harzburg · Harz zu jeder Jahreszeit",
     nav=["Wohnung", "Lage", "Preise", "Anfrage"], ask="Anfragen",
     hero_eyebrow="Ferienwohnung in Bad Harzburg",
-    hero_h1="Harz zu jeder Jahreszeit – mit Hallenbad und Sauna im Haus",
+    hero_h1="Harz zu jeder Jahreszeit – mit Hallenbad und Saunen im Haus",
     hero_lead="Ruhige, renovierte Wohnung für bis zu 4 Personen, direkt am Waldrand am Ende einer Sackgasse. Morgens Frühstück auf dem großen Balkon, tagsüber wandern im Nationalpark, abends schwimmen und saunieren.",
     btn_direct="Direkt anfragen", btn_view="Wohnung ansehen",
     rating="Hervorragend · 38 Bewertungen auf Booking.com",
@@ -137,14 +137,14 @@ T["de"] = dict(
 
 T["en"] = dict(
     lang="en", path="en/", up="../",
-    title="Holiday apartment Reese-Horstmann · Bad Harzburg with indoor pool and sauna",
+    title="Holiday apartment Reese-Horstmann · Bad Harzburg with indoor pool and saunas",
     desc="Cosy holiday apartment for up to 4 guests in Bad Harzburg, Germany: by the forest, with an indoor pool and two saunas in the building, a large balcony and free parking. Contact the hosts directly.",
     draft="Draft – not yet published.",
     brand="Holiday apartment Reese-Horstmann", brand_sub="Bad Harzburg · The Harz in every season",
     nav=["Apartment", "Location", "Prices", "Enquiry"], ask="Enquire",
     hero_eyebrow="Holiday apartment in Bad Harzburg, Germany",
-    hero_h1="The Harz in every season – with indoor pool and sauna in the building",
-    hero_lead="Quiet, renovated apartment for up to 4 guests, right at the edge of the forest at the end of a cul-de-sac. Breakfast on the large balcony, hiking in the national park by day, swimming and sauna in the evening.",
+    hero_h1="The Harz in every season – with indoor pool and saunas in the building",
+    hero_lead="Quiet, renovated apartment for up to 4 guests, right at the edge of the forest at the end of a cul-de-sac. Breakfast on the large balcony, hiking in the national park by day, swimming and saunas in the evening.",
     btn_direct="Enquire directly", btn_view="See the apartment",
     rating="Excellent · 38 reviews on Booking.com",
     hero_cap="View over the Harz near Bad Harzburg",
@@ -220,14 +220,14 @@ T["en"] = dict(
 
 T["ru"] = dict(
     lang="ru", path="ru/", up="../",
-    title="Апартаменты Reese-Horstmann · Бад-Харцбург, бассейн и сауна",
+    title="Апартаменты Reese-Horstmann · Бад-Харцбург, бассейн и сауны",
     desc="Уютные апартаменты для отдыха до 4 человек в Бад-Харцбурге (Германия): у леса, с крытым бассейном и двумя саунами в доме, большим балконом и бесплатной парковкой. Пишите хозяевам напрямую.",
     draft="Черновик – ещё не опубликовано.",
     brand="Апартаменты Reese-Horstmann", brand_sub="Бад-Харцбург · Гарц в любое время года",
     nav=["Квартира", "Расположение", "Цены", "Запрос"], ask="Запрос",
     hero_eyebrow="Апартаменты для отдыха в Бад-Харцбурге",
-    hero_h1="Гарц в любое время года – с бассейном и сауной в доме",
-    hero_lead="Тихая, отремонтированная квартира до 4 человек, прямо у леса, в конце тупиковой улицы. Утром завтрак на большом балконе, днём прогулки по национальному парку, вечером бассейн и сауна.",
+    hero_h1="Гарц в любое время года – с бассейном и саунами в доме",
+    hero_lead="Тихая, отремонтированная квартира до 4 человек, прямо у леса, в конце тупиковой улицы. Утром завтрак на большом балконе, днём прогулки по национальному парку, вечером бассейн и сауны.",
     btn_direct="Написать напрямую", btn_view="Посмотреть квартиру",
     rating="Превосходно · 38 отзывов на Booking.com",
     hero_cap="Вид на горы Гарц у Бад-Харцбурга",
@@ -361,7 +361,7 @@ def page(t):
         "containsPlace": {"@type": "Accommodation", "occupancy": {"@type": "QuantitativeValue", "maxValue": 4},
                           "numberOfBedrooms": 1},
         "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": n, "value": True}
-                           for n in ("Indoor pool", "Sauna", "Free parking", "Free Wi-Fi", "Balcony")],
+                           for n in ("Indoor pool", "Saunas", "Free parking", "Free Wi-Fi", "Balcony")],
         "checkinTime": "14:00", "checkoutTime": "10:00", "petsAllowed": False,
     }, ensure_ascii=False)
     draft_bar = f'<div class="draft">{t["draft"]}</div>\n\n' if DRAFT else ""
