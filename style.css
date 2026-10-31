@@ -154,3 +154,7 @@ body.has-mbar{padding-bottom:76px}
 .langs a{color:var(--muted);text-decoration:none;padding:4px 5px;border-radius:6px}
 .langs a[aria-current]{color:var(--green);background:var(--green-soft)}
 @media(max-width:420px){.top .btn-sm{display:none}}
+
+/* Grundriss nicht beschneiden */
+.ph.plan{background:#fff}
+.ph.plan img{object-fit:contain;padding:8px}

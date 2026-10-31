@@ -22,9 +22,13 @@ GALLERY = [
     ("kueche.jpg", 1050, 1400, "", {"de": "Küche", "en": "Kitchen", "ru": "Кухня"}),
     ("essecke.jpg", 1050, 1400, "", {"de": "Essecke", "en": "Dining area", "ru": "Обеденный уголок"}),
     ("wohnzimmer-tv.jpg", 1050, 1400, "", {"de": "Wohnzimmer", "en": "Living room", "ru": "Гостиная"}),
-    ("bad.jpg", 1024, 683, "", {"de": "Duschbad", "en": "Shower room", "ru": "Ванная с душем"}),
+    ("mini-backofen.jpg", 576, 768, "", {"de": "Kommode mit Mini-Backofen", "en": "Sideboard with mini oven", "ru": "Комод с мини-духовкой"}),
+    ("bad.jpg", 576, 768, "", {"de": "Duschbad", "en": "Shower room", "ru": "Ванная с душем"}),
+    ("waschtisch.jpg", 576, 768, "", {"de": "Waschtisch", "en": "Washbasin", "ru": "Раковина"}),
+    ("balkon-sitzplatz.jpg", 1050, 1400, "", {"de": "Balkon mit Sitzplatz", "en": "Balcony with seating", "ru": "Балкон со столиком"}),
     ("balkon.jpg", 1050, 1400, "", {"de": "Balkon am Waldrand", "en": "Balcony by the forest", "ru": "Балкон у леса"}),
     ("hallenbad-abends.jpg", 576, 768, "", {"de": "Hallenbad am Abend", "en": "Indoor pool in the evening", "ru": "Бассейн вечером"}),
+    ("grundriss.jpg", 502, 480, "plan", {"de": "Grundriss der Wohnung", "en": "Floor plan", "ru": "План квартиры"}),
 ]
 TRIPS = [
     ("seilbahn.jpg", 828, 621, {"de": "Burgberg-Seilbahn", "en": "Burgberg cable car", "ru": "Канатная дорога на Бургберг"}),
@@ -408,7 +412,6 @@ def page(t):
         <h3>{t['extras_h']}</h3>
         <ul class="ticks">
 {li(t['extras'])}
-          <li><a href="{up}fotos/grundriss.jpg" target="_blank" rel="noopener">{t['plan']}</a></li>
         </ul>
       </div>
     </div>
