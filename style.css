@@ -55,7 +55,7 @@ section{padding:56px 0}
 .ph{position:relative;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#cfe0d5,#e9dfcf);display:flex;align-items:flex-end;min-height:180px;margin:0}
 .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ph figcaption{position:relative;margin:12px;background:rgba(255,255,255,.88);border-radius:999px;padding:4px 12px;font-size:.82rem;color:var(--ink)}
-.ph.tall{min-height:340px}
+.ph.tall{min-height:420px}
 @media(min-width:860px){.ph.tall{min-height:440px}}
 
 /* Höhepunkte */
@@ -68,6 +68,7 @@ section{padding:56px 0}
 
 /* Galerie */
 .gallery{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.gallery .ph{min-height:220px}
 .gallery .wide{grid-column:span 2}
 @media(min-width:860px){.gallery{grid-template-columns:repeat(4,1fr)}.gallery .wide{grid-column:span 2;grid-row:span 2}}
 

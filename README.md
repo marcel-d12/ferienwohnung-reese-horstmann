@@ -12,7 +12,8 @@ Statische Seite ohne Build-Schritt, gehostet über GitHub Pages (Branch `main`, 
 
 ## Vor dem Livegang
 
-- [ ] Fotos im Original von Swetlana und Carsten
+- [x] Fotos der Wohnung (31.10.)
+- [ ] Fotos von Hallenbad und Sauna
 - [ ] Telefon/WhatsApp und E-Mail (in `index.html` oben im Skript und im Text)
 - [ ] Anschrift im Impressum und in der Datenschutzerklärung
 - [ ] Umsatzsteuer-Abschnitt im Impressum klären
