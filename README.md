@@ -13,7 +13,7 @@ Statische Seite ohne Build-Schritt, gehostet über GitHub Pages (Branch `main`, 
 ## Vor dem Livegang
 
 - [x] Fotos der Wohnung (31.10.)
-- [ ] Fotos von Hallenbad und Sauna
+- [x] Fotos von Hallenbad, Bad, Grundriss und Ausflügen aus dem Booking-Inserat (31.10.)
 - [ ] Telefon/WhatsApp: in `index.html` oben im Skript `WHATSAPP` und `TELEFON_ANZEIGE` setzen
 - [x] Anschrift und E-Mail (31.10.)
 - [ ] Falls es eine USt-IdNr. gibt: ins Impressum
