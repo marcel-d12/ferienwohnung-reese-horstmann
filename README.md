@@ -1,10 +1,11 @@
 # Ferienwohnung Reese-Horstmann
 
-Website der Ferienwohnung in Bad Harzburg: https://ferienwohnungreesehorstmann.de
+Website der Ferienwohnung in Bad Harzburg: https://harz-zu-jeder-jahreszeit.de (ferienwohnungreesehorstmann.de leitet weiter)
 
 Statische Seite ohne Build-Schritt, gehostet über GitHub Pages (Branch `main`, Ordner `/`).
 
-- `index.html` – Startseite
+- `build.py` – erzeugt die Startseite in drei Sprachen (`index.html`, `en/index.html`, `ru/index.html`). Texte nur dort ändern, dann `python3 build.py`
+- `site.js` – Anfrage-Helfer und Fotoansicht, Kontaktdaten oben
 - `impressum.html`, `datenschutz.html` – Rechtstexte
 - `style.css` – Gestaltung
 - `fotos/` – Bilder (Platzhalter in der Seite: `<figure class="ph">`; Foto mit `<img src="fotos/…" alt="…">` in die figure setzen)
@@ -14,7 +15,7 @@ Statische Seite ohne Build-Schritt, gehostet über GitHub Pages (Branch `main`, 
 
 - [x] Fotos der Wohnung (31.10.)
 - [x] Fotos von Hallenbad, Bad, Grundriss und Ausflügen aus dem Booking-Inserat (31.10.)
-- [ ] Telefon/WhatsApp: in `index.html` oben im Skript `WHATSAPP` und `TELEFON_ANZEIGE` setzen
+- [x] Telefon, Mobil/WhatsApp und Mail (31.10.)
 - [x] Anschrift und E-Mail (31.10.)
 - [ ] Falls es eine USt-IdNr. gibt: ins Impressum
-- [ ] Entwurfs-Hinweis und `noindex` entfernen
+- [ ] Entwurfs-Hinweis und `noindex` entfernen (`DRAFT = False` in `build.py`, Hinweis in Impressum und Datenschutz löschen)

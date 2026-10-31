@@ -147,3 +147,10 @@ body.has-mbar{padding-bottom:76px}
 .lb .prev{left:12px;top:50%;transform:translateY(-50%)}
 .lb .next{right:12px;top:50%;transform:translateY(-50%)}
 .lb .cap{position:absolute;left:0;right:0;bottom:0;z-index:2;text-align:center;color:#fff;padding:12px 16px calc(14px + env(safe-area-inset-bottom));font-size:.9rem;background:linear-gradient(transparent,rgba(0,0,0,.6))}
+
+/* Sprachumschalter */
+.head-right{display:flex;align-items:center;gap:10px}
+.langs{display:flex;gap:2px;font-size:.78rem;font-weight:600}
+.langs a{color:var(--muted);text-decoration:none;padding:4px 5px;border-radius:6px}
+.langs a[aria-current]{color:var(--green);background:var(--green-soft)}
+@media(max-width:420px){.top .btn-sm{display:none}}
