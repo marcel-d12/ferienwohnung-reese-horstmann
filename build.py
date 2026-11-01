@@ -12,7 +12,7 @@ import json
 import os
 
 SITE = "https://harz-zu-jeder-jahreszeit.de/"
-GOATCOUNTER = "harzfewo"  # Besucherzähler (goatcounter.com, ohne Cookies); leer lassen = aus
+GOATCOUNTER = "fewoharz"  # Besucherzähler (goatcounter.com, ohne Cookies); leer lassen = aus
 DRAFT = False  # Entwurf: gelber Hinweis und noindex. Auf False setzen, wenn die Seite fertig ist.
 
 # Fotos: Datei, Breite, Höhe, Bildunterschrift je Sprache (dient auch als Alt-Text in der Großansicht)
