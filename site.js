@@ -79,3 +79,14 @@ var EMAIL = "harz.fewo@web.de";
     x0 = null;
   });
 })();
+
+// Besucherzahl unten im Fuß (GoatCounter; in den GoatCounter-Einstellungen muss
+// „Allow adding visitor counts on your website“ aktiv sein, sonst bleibt die Zeile unsichtbar)
+(function () {
+  var el = document.getElementById("visits");
+  if (!el || !el.dataset.gc || !window.fetch) return;
+  fetch("https://" + el.dataset.gc + ".goatcounter.com/counter/TOTAL.json")
+    .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+    .then(function (d) { if (!d || !d.count) return; el.querySelector("span").textContent = d.count; el.hidden = false; })
+    .catch(function () {});
+})();

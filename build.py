@@ -141,6 +141,7 @@ T["de"] = dict(
     btn_wa="Per WhatsApp anfragen", btn_mail="Per E-Mail anfragen",
     f_hint="Ihre Angaben werden nicht auf dieser Website gespeichert. Die Knöpfe öffnen Ihr E-Mail-Programm oder WhatsApp mit einer fertigen Nachricht.",
     legal=["Impressum", "Datenschutz"],
+    visits="Besucher",
     lb=["Fotoansicht", "Schließen", "Vorheriges Foto", "Nächstes Foto"],
     js=dict(hello="Hallo Familie Reese,", interest="wir interessieren uns für Ihre Ferienwohnung in Bad Harzburg.",
             period="Zeitraum", guests="Gäste", adults="Erwachsene", children="Kinder",
@@ -235,6 +236,7 @@ T["en"] = dict(
     btn_wa="Enquire via WhatsApp", btn_mail="Enquire by email",
     f_hint="Your details are not stored on this website. The buttons open your email app or WhatsApp with a ready-made message.",
     legal=["Impressum (legal notice)", "Datenschutz (privacy)"],
+    visits="Visitors",
     lb=["Photo viewer", "Close", "Previous photo", "Next photo"],
     js=dict(hello="Dear Reese family,", interest="we are interested in your holiday apartment in Bad Harzburg.",
             period="Dates", guests="Guests", adults="adults", children="children",
@@ -329,6 +331,7 @@ T["ru"] = dict(
     btn_wa="Написать в WhatsApp", btn_mail="Написать на почту",
     f_hint="Ваши данные не сохраняются на этом сайте. Кнопки открывают почтовую программу или WhatsApp с готовым сообщением.",
     legal=["Impressum (выходные данные)", "Datenschutz (конфиденциальность)"],
+    visits="Посетители",
     lb=["Просмотр фото", "Закрыть", "Предыдущее фото", "Следующее фото"],
     js=dict(hello="Здравствуйте, семья Reese!", interest="Нас интересуют ваши апартаменты в Бад-Харцбурге.",
             period="Даты", guests="Гости", adults="взр.", children="дет.",
@@ -606,6 +609,7 @@ def page(t):
   <div class="wrap">
     <div>{t['brand']} · Kurhausstraße 18 · 38667 Bad Harzburg</div>
     <div><a href="{up}impressum.html">{t['legal'][0]}</a> · <a href="{up}datenschutz.html">{t['legal'][1]}</a></div>
+    <div id="visits" data-gc="{GOATCOUNTER}" hidden>{t['visits']}: <span></span></div>
   </div>
 </footer>
 
