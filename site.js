@@ -87,6 +87,6 @@ var EMAIL = "harz.fewo@web.de";
   if (!el || !el.dataset.gc || !window.fetch) return;
   fetch("https://" + el.dataset.gc + ".goatcounter.com/counter/TOTAL.json")
     .then(function (r) { if (!r.ok) throw 0; return r.json(); })
-    .then(function (d) { if (!d || !d.count) return; el.querySelector("span").textContent = d.count; el.hidden = false; })
+    .then(function (d) { if (!d || !d.count || d.count === "0") return; el.querySelector("span").textContent = d.count; el.hidden = false; })
     .catch(function () {});
 })();
