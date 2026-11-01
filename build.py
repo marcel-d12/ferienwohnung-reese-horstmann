@@ -12,6 +12,7 @@ import json
 import os
 
 SITE = "https://harz-zu-jeder-jahreszeit.de/"
+GOATCOUNTER = "harzfewo"  # Besucherzähler (goatcounter.com, ohne Cookies); leer lassen = aus
 DRAFT = False  # Entwurf: gelber Hinweis und noindex. Auf False setzen, wenn die Seite fertig ist.
 
 # Fotos: Datei, Breite, Höhe, Bildunterschrift je Sprache (dient auch als Alt-Text in der Großansicht)
@@ -397,6 +398,8 @@ def page(t):
                            for n in ("Indoor pool", "Saunas", "Free parking", "Free Wi-Fi", "Balcony")],
         "checkinTime": "14:00", "checkoutTime": "10:00", "petsAllowed": False,
     }, ensure_ascii=False)
+    counter = (f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
+               if GOATCOUNTER else "")
     draft_bar = f'<div class="draft">{t["draft"]}</div>\n\n' if DRAFT else ""
     robots = '<meta name="robots" content="noindex, nofollow">\n' if DRAFT else ""
 
@@ -419,6 +422,7 @@ def page(t):
 <script type="application/ld+json">{ld}</script>
 <link rel="stylesheet" href="{up}style.css">
 <link rel="icon" href="{FAVICON}">
+{counter}
 </head>
 <body class="has-mbar">
 <!-- Erzeugt mit build.py – Änderungen bitte dort machen. -->
